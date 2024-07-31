@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Find Number Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sayı Tahmin Oyunu</h1>
+            <p id="text-level">Başlamak için bir level seçiniz</p>
+            
+            <button id="juniorBtn" class="btn-level">Junior</button>
+            <button id="midLevelBtn" class="btn-level">Mid Level</button>
+            <button id="seniorBtn" class="btn-level">Senior</button>
+            
+        </div>
+
+        <!-- JUNIOR -->
+        <div id="junior" class="input-level ">
+        <p>Lütfen 0-20 arasında bir sayı tahmin edin</p>
+        <input type="text" id="juniorInp" placeholder="Sayı girin">
+        <button id="juniorBtnSubmit">Tahmin Et</button>
+        <p id="juniorResult" ></p>
+            </div>
+                <!-- MID LEVEL -->
+        <div id="midLevel" class="input-level d-none ">
+            <p>Lütfen 0-50 arasında bir sayı tahmin edin</p>
+            <input type="text" id="midLevelInp" placeholder="Sayı girin">
+            <button id="midLevelBtnSubmit">Tahmin Et</button>
+            <p id="midLevelResult" ></p>
+    </div>
+        <!-- SENIOR -->
+        <div id="senior" class="input-level  d-none">
+            <p>Lütfen 0-100 arasında bir sayı tahmin edin</p>
+            <input type="text" id="seniorInp" placeholder="Sayı girin">
+            <button id="seniorBtnSubmit">Tahmin Et</button>
+            <p id="seniorResult" ></p>
+            </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
