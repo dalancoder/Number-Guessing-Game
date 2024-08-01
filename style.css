@@ -1,82 +1,260 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:4rem;
-    
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  height: 100vh;
+  background-image: url(./Number\ guessing\ game\ in\ python\ –\ allinpython_com.jpeg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* z-index: 0; */
 }
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:2rem;
-    padding:1.5rem 0;
-    border: 2px solid;
-    width: 85%;
-    background-color: rgba(128, 128, 128, 0.5) ;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  /* z-index: -1; */
 }
-.btn-level{
-    width: 200px;
-    height: 70px;
-    color:white;
-    text-shadow: 1px 1px 1px black;
-    font-size: 1.2rem;
-    border-radius: 30px;
-    box-shadow: 5px 5px 5px gray;
-    cursor:pointer;
+.img {
+  width: 430px;
+
+  /* perspective: 1000px; */
 }
-.btn1{
-    background-color: greenyellow;
+.img img {
+  width: 430px;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  box-shadow: inset 0px 0px 30px red;
+  border-radius: 50%;
+  animation: donme 4s ease infinite;
+  z-index: 2;
 }
-.btn2{
-    background-color: yellow;
-}
-.btn3{
-    background-color: red;
-}
-h1{
-    font-variant: small-caps;
-    text-shadow: 1px 1px 1px white;
-    font-size: 3rem;
-}
-#text-level{
-    font-size:1.5rem;
-    font-weight: 800;
-    color:rgb(243, 224, 199);
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
-    
-}
-.input1{
-    /* visibility: hidden; */
-    border:2px solid;
-    width: 85%;
-    text-align: center;
-    height: 200px;
-}
-.input2{
-    border:2px solid;
-    width: 85%;
-    text-align: center;
-    height: 200px; 
-}
-.input3{
-    border:2px solid;
-    width: 85%;
-    text-align: center;
-    height: 200px; 
+@keyframes donme {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: rotateX(45deg) scale(1.1);
+  }
+  50% {
+    transform: rotateY(0deg) scale(1);
+  }
+  75% {
+    transform: rotateY(-45deg) scale(1.1);
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+  }
 }
 
-.toggle{
-    border:2px solid;
-    width: 85%;
-    text-align: center;
-    height: 200px;
+.img img:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border: 2px solid;
+  width: 85%;
+  background-color: rgba(170, 169, 169, 0.212);
+  margin-top: 20rem;
+  z-index: 1;
+  border-radius: 30px;
+}
+.btn-level {
+  width: 200px;
+  height: 70px;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px rgb(189, 224, 123);
+  cursor: pointer;
+}
+#juniorBtn1 {
+  background-color: rgba(172, 255, 47, 0.295);
+  box-shadow: 5px 5px 5px rgb(189, 224, 123);
+}
+#juniorBtn1:hover {
+  background-color: rgb(172, 255, 47);
+}
+#midLevelBtn1 {
+  background-color: rgba(255, 255, 0, 0.384);
+  box-shadow: 5px 5px 5px rgb(255, 245, 107);
+}
+#midLevelBtn1:hover {
+  background-color: rgb(255, 255, 0);
+}
+
+#seniorBtn1 {
+  background-color: rgba(255, 0, 0, 0.349);
+  box-shadow: 5px 5px 5px rgb(231, 93, 83);
+}
+#seniorBtn1:hover {
+  background-color: rgb(255, 0, 0);
+}
+h1 {
+  font-variant: small-caps;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  font-size: 5rem;
+  color: rgb(139, 51, 51);
+  font-weight: 800;
+}
+#text-level {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgb(243, 224, 199);
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+.input-level {
+  /* visibility: hidden; */
+  border: 2px solid;
+  width: 85%;
+  text-align: center;
+  height: 600px;
+  background-color: rgba(145, 161, 175, 0.356);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  align-items: center;
+  border-radius: 30px;
+}
+.text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(110, 110, 110);
+  text-shadow: 1px 1px 1px black;
+}
+.inp {
+  width: 300px;
+  height: 75px;
+  background-color: azure;
+  box-shadow: inset 0 0 30px black;
+}
+.btn {
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: antiquewhite;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 5px rgb(147, 201, 196);
+  cursor: pointer;
+  border: 1px solid rgb(44, 107, 107);
+  border-radius: 10px;
+  background-color: rgb(67, 235, 235);
+}
+.butons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.btns {
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: antiquewhite;
+  text-shadow: 2px 2px 2px black;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.btns11 {
+  background-color: rgb(109, 143, 56);
+  box-shadow: 3px 3px 5px rgb(120, 224, 99);
+}
+.btns12 {
+  background-color: rgb(109, 143, 56);
+  box-shadow: 3px 3px 5px rgb(120, 224, 99);
+}
+.btns13 {
+  background-color: rgb(109, 143, 56);
+  box-shadow: 3px 3px 5px rgb(120, 224, 99);
+}
+.btns21 {
+  background-color: rgb(169, 83, 177);
+  box-shadow: 3px 3px 5px rgb(186, 89, 231);
+}
+.btns22 {
+  background-color: rgb(169, 83, 177);
+  box-shadow: 3px 3px 5px rgb(186, 89, 231);
+}
+.btns31 {
+  background-color: rgb(204, 201, 46);
+  box-shadow: 0px 0px 5px #7f882b;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.btns32 {
+  background-color: rgb(204, 201, 46);
+  box-shadow: 0px 0px 5px #7f882b;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.btns33 {
+  background-color: rgb(204, 201, 46);
+  box-shadow: 0px 0px 5px #7f882b;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.text2 {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  background-color: rgba(255, 255, 255, 0.144);
+}
+
+.toggle {
+  border: 2px solid;
+  width: 85%;
+  text-align: center;
+  height: 200px;
 }
 .d-none {
-    display:none;
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .img img{
+    width: 200px;
+    bottom:10px;
+    left:100px;
+  }
+  .container{
+    background-size: contain;
+  }
+  .header{
+    margin-top: 0;
+    gap:1.5rem
+  }
+  .input-level{
+   
+    min-height: 150vh;
+  }
 }

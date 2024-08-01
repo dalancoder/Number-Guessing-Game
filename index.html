@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Find Number Game</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>Sayı Tahmin Oyunu</h1>
-            <p id="text-level">Başlamak için bir level seçiniz</p>
-            
-            <button id="juniorBtn" class="btn-level">Junior</button>
-            <button id="midLevelBtn" class="btn-level">Mid Level</button>
-            <button id="seniorBtn" class="btn-level">Senior</button>
-            
+      <div class="overlay"></div>
+        <div class="img">
+            <img src="./vecteezy_3d-play-button_11099352.png" alt="">
         </div>
+      <div class="header d-none">
+        <h1>Sayı Tahmin Oyunu</h1>
+        <p id="text-level">Başlamak için bir level seçiniz</p>
 
-        <!-- JUNIOR -->
-        <div id="junior" class="input-level ">
-        <p>Lütfen 0-20 arasında bir sayı tahmin edin</p>
-        <input type="text" id="juniorInp" placeholder="Sayı girin">
-        <button id="juniorBtnSubmit">Tahmin Et</button>
-        <p id="juniorResult" ></p>
-            </div>
-                <!-- MID LEVEL -->
-        <div id="midLevel" class="input-level d-none ">
-            <p>Lütfen 0-50 arasında bir sayı tahmin edin</p>
-            <input type="text" id="midLevelInp" placeholder="Sayı girin">
-            <button id="midLevelBtnSubmit">Tahmin Et</button>
-            <p id="midLevelResult" ></p>
+        <button id="juniorBtn1" class="btn-level">Junior</button>
+        <button id="midLevelBtn1" class="btn-level">Mid Level</button>
+        <button id="seniorBtn1" class="btn-level">Senior</button>
+      </div>
+
+      <!-- JUNIOR -->
+      <div id="junior" class="input-level d-none">
+        <p class="text">Lütfen 1-20 arasında bir sayı tahmin edin</p>
+        <input class="inp" type="text" id="inp1" placeholder="Sayı girin" />
+        <button class="btn" id="juniorBtn">Tahmin Et</button>
+        <div class="butons">
+          <button class="btns btns11">Geri</button>
+          <button class="btns btns21">İlerle</button>
+          <button class="btns btns31">Başa Dön</button>
+        </div>
+        <p class="text2" id="result1"></p>
+      </div>
+      <!-- MID LEVEL -->
+      <div id="midLevel" class="input-level d-none">
+        <p class="text">Lütfen 1-50 arasında bir sayı tahmin edin</p>
+        <input class="inp" type="text" id="inp2" placeholder="Sayı girin" />
+        <button class="btn" id="midLevelBtn">Tahmin Et</button>
+        <div class="butons">
+          <button class="btns btns12">Geri</button>
+          <button class="btns btns22">İlerle</button>
+          <button class="btns btns32">Başa Dön</button>
+        </div>
+        <p class="text2" id="result2"></p>
+      </div>
+      <!-- SENIOR -->
+      <div id="senior" class="input-level d-none">
+        <p class="text">Lütfen 1-100 arasında bir sayı tahmin edin</p>
+        <input class="inp" type="text" id="inp3" placeholder="Sayı girin" />
+        <button class="btn" id="seniorBtn">Tahmin Et</button>
+        <div class="butons">
+          <button class="btns btns13">Geri</button>
+          
+          <button class="btns btns33">Başa Dön</button>
+        </div>
+        <p class="text2"  id="result3"></p>
+      </div>
     </div>
-        <!-- SENIOR -->
-        <div id="senior" class="input-level  d-none">
-            <p>Lütfen 0-100 arasında bir sayı tahmin edin</p>
-            <input type="text" id="seniorInp" placeholder="Sayı girin">
-            <button id="seniorBtnSubmit">Tahmin Et</button>
-            <p id="seniorResult" ></p>
-            </div>
-    
     <script src="app.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
 </html>
